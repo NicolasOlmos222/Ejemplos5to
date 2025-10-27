@@ -3,14 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TP 7</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-   
-
-
-    
-     <script src="script.js"></script>
+    <nav>
+        <button onclick="crear()">CREAR</button>
+        <button onclick="listar()">LISTAR</button>
+        <button onclick="buscar()">BUSCAR</button>
+    </nav>
+    <main>
+        <div id = "crear" style="display: none;">
+            <Form>
+                <label for="">nombre</label>
+                <input type="text" id="nombre">
+                <label for="">apellido</label>
+                <input type="text" id="apellido">
+                <label for="">curso</label>
+                <input type="text" id="curso">
+                <label for="">nota1</label>
+                <input type="number" id="n1">
+                <label for="">nota2</label>
+                <input type="number" id="n2">
+                <label for="">nota3</label>
+                <input type="number" id="n3">
+            </Form>
+            <button onclick = "enviar()">enviar</button>
+        </div>
+        <div id = "listar" style="display: none;">
+            
+        </div>
+        <div id = "buscar" style="display: none;">ACA BUSCO ESTUDIANTES</div>
+    </main>
+    <script src="script.js"></script>
 </body>
-</html
+</html>

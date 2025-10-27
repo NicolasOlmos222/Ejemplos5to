@@ -130,4 +130,43 @@ class Escuela {
 
 var escuela = new Escuela()
 
-//Sharau al under y a mis viejos
+function crear(){
+    document.getElementById("crear").style.display = "block"
+    document.getElementById("listar").style.display = "none"
+    document.getElementById("buscar").style.display = "none"
+}
+
+function listar(){
+    document.getElementById("crear").style.display = "none"
+    document.getElementById("listar").style.display = "block"
+    document.getElementById("buscar").style.display = "none"
+
+    var estudiantes = escuela.getEstudiantes()
+    if (estudiantes.length > 0){
+        document.getElementById("listar").innerHTML = ""
+        for (var i = 0; i < estudiantes.length; i ++){
+            var estudiante = estudiantes[i]
+            document.getElementById("listar").innerHTML += estudiante.getNombre() + " " + estudiante.getApellido() + " Curso: " + estudiante.getCurso() + "<br>"
+        }
+    }else{
+        document.getElementById("listar").innerHTML = "No hay estudiantes cargados"
+    }
+}
+
+function buscar(){
+    document.getElementById("crear").style.display = "none"
+    document.getElementById("listar").style.display = "none"
+    document.getElementById("buscar").style.display = "block"
+}
+
+function enviar(){
+    var nombre = document.getElementById("nombre").value;
+    var apellido = document.getElementById("apellido").value;
+    var curso = document.getElementById("curso").value;
+    var nota1 = document.getElementById("n1").value;
+    var nota2 = document.getElementById("n2").value;
+    var nota3 = document.getElementById("n3").value;
+
+    var estudiante = new Estudiante(nombre, apellido, curso, nota1, nota2, nota3)
+    escuela.agregarEstudiante(estudiante)
+}
